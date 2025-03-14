@@ -1,0 +1,72 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球新闻导航</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg width="42" height="42" viewBox="0 0 42 42">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ff9000" />
+                        <stop offset="100%" stop-color="#f70" />
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="2.5" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                    <animate attributeName="stdDeviation" from="2.5" to="3.5" dur="2s" repeatCount="indefinite" />
+                </defs>
+                <circle cx="21" cy="21" r="19" fill="url(#logoGradient)" stroke="#333" stroke-width="1" filter="url(#glow)">
+                    <animate attributeName="r" values="19;19.5;19;18.5;19" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="21" cy="21" r="11" fill="#1b1b1b" stroke="#ff9000" stroke-width="1.5" />
+                <path d="M13,21 h16 M21,13 v16" stroke="#ff9000" stroke-width="1.5" />
+                <circle cx="21" cy="21" r="3" fill="#ff9000" filter="url(#glow)">
+                    <animate attributeName="r" values="3;3.5;3;2.5;3" dur="2s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+            <h1>全球新闻导航</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="搜索新闻站点...">
+            <button id="search-button">搜索</button>
+        </div>
+    </header>
+    
+    <main>
+        <div class="filters">
+            <div class="filter-group">
+                <span>区域:</span>
+                <button class="filter-btn active" data-region="all">全球</button>
+                <button class="filter-btn" data-region="asia">亚洲</button>
+                <button class="filter-btn" data-region="europe">欧洲</button>
+                <button class="filter-btn" data-region="north-america">北美</button>
+            </div>
+        </div>
+        
+        <div class="news-container" id="news-container">
+            <!-- 新闻站点将通过JavaScript填充 -->
+        </div>
+    </main>
+    
+    <footer>
+        <p> 2023 全球新闻导航 | <a href="#" id="disclaimer-link">免责声明</a></p>
+    </footer>
+    
+    <div class="modal" id="disclaimer-modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>免责声明</h2>
+            <p>本网站为新闻导航工具，仅提供各新闻媒体网站的链接。我们努力客观标注各媒体的政治倾向，但这些标签仅供参考，可能无法完全准确地反映媒体的立场。</p>
+            <p>我们鼓励用户接触不同政治倾向的新闻来源，以获取更全面的信息视角。访问任何外部链接的风险由用户自行承担。</p>
+        </div>
+    </div>
+</body>
+</html>
